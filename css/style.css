@@ -4,86 +4,82 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #d5f1fe; /* Light gray background for the whole page */
-    padding: 0;
-    height: 100vh; /* Full height of the viewport */
-    margin: 0; /* Remove default margin */
+    background-color: #d5f1fe;
+    height: 100vh;
+    margin: 0;
 }
 
-/* Container for the text content (Title and paragraph) */
+/* Text container */
 #text-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; /* Centers the content horizontally */
-    margin-left: 5%; /* Adjust the left margin if needed */
-    width: 50%; /* Take up 50% of the available space */
+    align-items: center;
+    width: 50%;
+    margin-left: 5%;
 }
 
-/* Container for the map */
+/* Map container */
 #map-container {
-    position: relative; /* Allows absolute positioning of the tooltip */
-    width: 50%; /* Set the width of the map container */
+    position: relative;
+    width: 50%;
     height: 80%;
 }
 
-/* Styles for the regions in the map */
+/* Region styles */
 .region {
-    fill: #F4D03F; /* Default fill color for regions */
-    stroke: #666; /* Dark gray stroke color for region borders */
-    stroke-width: 1px; /* Set the stroke width */
-    transition: fill 0.3s; /* Smooth transition for fill color changes */
+    fill: #F4D03F;
+    stroke: #666;
+    stroke-width: 1px;
+    transition: fill 0.3s;
 }
 
-/* Hover effect for regions */
 .region:hover {
-    fill: yellow; /* Change to yellow on hover */
+    fill: yellow;
     cursor: pointer;
 }
 
 /* Tooltip styles */
 #tooltip {
-    position: absolute; /* Positioning the tooltip absolutely */
-    background-color: white; /* White background for better contrast */
-    border: 1px solid #ccc; /* Light gray border */
-    padding: 5px; /* Padding around the tooltip text */
-    border-radius: 5px; /* Rounded corners for the tooltip */
-    pointer-events: none; /* Prevent tooltip from interfering with mouse events */
+    position: fixed;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 5px;
+    pointer-events: none;
+    font-size: 14px;
+    white-space: nowrap;
 }
 
-/* Hidden class for elements that should not be displayed */
 .hidden {
-    display: none; /* Hides elements with this class */
+    display: none;
 }
 
 @media (max-width: 768px) {
     body {
-        flex-direction: column; /* Stack text and map vertically */
-        align-items: center; /* Center-align content */
+        flex-direction: column;
+        align-items: center;
         padding: 10px;
         text-align: center;
     }
 
     #map-container {
-        width: 100%; /* Ensure map takes full width on smaller screens */
-        max-width: 100%; /* Remove width limit on smaller screens */
+        width: 100%;
     }
 
-    /* Ensure the SVG map adjusts to small screens */
     svg {
-        width: 100%; /* Full width on mobile */
-        height: auto; /* Auto-adjust height to keep aspect ratio */
+        width: 100%;
+        height: auto;
     }
 
-    /* Tooltip adjustments for smaller screens */
     #tooltip {
-        font-size: 12px; /* Smaller font for tooltips */
-        padding: 3px; /* Reduce padding for mobile */
+        font-size: 12px;
     }
 }
 
 @media (max-width: 480px) {
     #tooltip {
-        font-size: 10px; /* Smaller tooltips for very small screens */
+        font-size: 10px;
+        padding: 3px;
     }
 }
