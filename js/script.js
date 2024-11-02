@@ -2,16 +2,17 @@ const regions = document.querySelectorAll('.region');
 const tooltip = document.getElementById('tooltip');
 
 // Show the tooltip
-function showTooltip(event, regionName) {
+function showTooltip(event, regionName, description) {
     // Update tooltip content
-    tooltip.textContent = regionName;
+    //tooltip.textContent = regionName;
+    tooltip.innerHTML = `<strong>${regionName}</strong><br>${description}<br><span>Click for more details</span>`;
     tooltip.classList.remove('hidden');
 
     // Position the tooltip near the mouse cursor
-    const offsetX = 10;
-    const offsetY = 20;
-    tooltip.style.left = `${event.clientX + offsetX}px`;
-    tooltip.style.top = `${event.clientY + offsetY}px`;
+    const offsetX = 450;
+    const offsetY = 103;
+    tooltip.style.left = `${event.clientX - offsetX}px`;
+    tooltip.style.top = `${event.clientY - offsetY}px`;
 }
 
 // Hide the tooltip
@@ -45,15 +46,16 @@ function handleClick(regionName) {
 // Attach event listeners
 regions.forEach(region => {
     const regionName = region.getAttribute('name');
+    const description = region.getAttribute('data-description');
 
     // Show tooltip on mouseover
     region.addEventListener('mouseover', (event) => {
-        showTooltip(event, regionName);
+        showTooltip(event, regionName, description);
     });
 
     // Move tooltip with mouse
     region.addEventListener('mousemove', (event) => {
-        showTooltip(event, regionName);
+        showTooltip(event, regionName, description);
     });
 
     // Hide tooltip on mouseout

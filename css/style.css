@@ -40,16 +40,31 @@ body {
 }
 
 /* Tooltip styles */
+/* Tooltip styles */
 #tooltip {
     position: fixed;
-    background-color: white;
-    border: 1px solid #ccc;
-    padding: 5px;
-    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.85);
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
     pointer-events: none;
     font-size: 14px;
     white-space: nowrap;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    width: 565x; /* Adjust width as needed */
 }
+
+#tooltip strong {
+    font-size: 16px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+#tooltip span {
+    font-size: 12px;
+    color: #ccc;
+}
+
 
 .hidden {
     display: none;
