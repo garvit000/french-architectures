@@ -4,7 +4,6 @@ const tooltip = document.getElementById('tooltip');
 // Show the tooltip
 function showTooltip(event, regionName, description) {
     // Update tooltip content
-    //tooltip.textContent = regionName;
     tooltip.innerHTML = `<strong>${regionName}</strong><br>${description}<br><span>Click for more details</span>`;
     tooltip.classList.remove('hidden');
 
