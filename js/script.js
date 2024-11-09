@@ -43,18 +43,12 @@ function hideTooltip() {
     tooltip.style.left = '-1000px';  // Move off-screen when hidden
 }
 
-//code a dark mode function
-function toggleNightMode() {
-    document.body.classList.toggle("night-mode");
-}
-
-
 // Handle region click to navigate
 function handleClick(regionName) {
     const urlMap = {
         "Hauts de France": "./states/hauts-de-france.html",
         "Grand Est": "./states/grand-est.html",
-        "Provence Alpes Côte d'Azur": "./states/provence-alpes-cote-d-azur.html",
+        "Provence Alpes Côte d'Azu": "./states/provence-alpes-cote-d-azur.html",
         "Auvergne Rhône Alpes": "./states/auvergne-rhone-alpes.html",
         "Bourgogne Franche Comté": "./states/bourgogne-franche-comte.html",
         "Occitanie": "./states/occitanie.html",
