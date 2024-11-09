@@ -4,20 +4,50 @@ const tooltip = document.getElementById('tooltip');
 // Show the tooltip
 function showTooltip(event, regionName, description) {
     // Update tooltip content
-    tooltip.innerHTML = `<strong>${regionName}</strong><br>${description}<br><span>Click for more details</span>`;
+    tooltip.innerHTML = `
+        <strong>${regionName}</strong>
+        <br>${description}
+        <br><span class="click-hint">Click for more details</span>
+    `;
     tooltip.classList.remove('hidden');
 
-    // Position the tooltip near the mouse cursor
-    const offsetX = 450;
-    const offsetY = 103;
-    tooltip.style.left = `${event.clientX - offsetX}px`;
-    tooltip.style.top = `${event.clientY - offsetY}px`;
+    // Calculate viewport boundaries
+    const viewportWidth = window.innerWidth;
+    const viewportHeight = window.innerHeight;
+    const tooltipRect = tooltip.getBoundingClientRect();
+
+    // Dynamic positioning with boundary checking
+    let offsetX = 20;
+    let offsetY = 20;
+    let posX = event.clientX + offsetX;
+    let posY = event.clientY + offsetY;
+
+    // Adjust if tooltip would overflow right edge
+    if (posX + tooltipRect.width > viewportWidth) {
+        posX = event.clientX - tooltipRect.width - offsetX;
+    }
+
+    // Adjust if tooltip would overflow bottom edge
+    if (posY + tooltipRect.height > viewportHeight) {
+        posY = event.clientY - tooltipRect.height - offsetY;
+    }
+
+    // Apply calculated position
+    tooltip.style.left = `${posX}px`;
+    tooltip.style.top = `${posY}px`;
 }
 
 // Hide the tooltip
 function hideTooltip() {
     tooltip.classList.add('hidden');
+    tooltip.style.left = '-1000px';  // Move off-screen when hidden
 }
+
+//code a dark mode function
+function toggleNightMode() {
+    document.body.classList.toggle("night-mode");
+}
+
 
 // Handle region click to navigate
 function handleClick(regionName) {
