@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nouvelle Aquitaine - French Architecture</title>
+    <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+       <div id="text-container">
+        <h1 id="nouvelle_h1">Nouvelle Aquitaine</h1>
+            <h2 id="nouvelle_h2">La Cité du Vin in Bordeaux</h2>
+            <p id="nouvelle_p">La Cité du Vin in Bordeaux is a unique cultural landmark dedicated to the world of wine. Opened in 2016, this impressive building reflects the shapes and movements of wine in a glass through its curved, flowing design. Created by architects Anouk Legendre and Nicolas Desmazières, the structure combines glass and metal to create a sense of fluidity. Inside, visitors experience interactive exhibits, workshops, and a panoramic tasting room that offers views over Bordeaux and the Garonne River. The architecture of La Cité du Vin symbolizes the blending of tradition and innovation in wine culture, making it a must-visit for wine enthusiasts and architecture lovers alike.</p>
+        <footer>
+            <p>&copy; 2024 French Architecture</p>
+        </footer>
+</div>
+<div class="image-container">
+    <img id="images" class="nouvelle_img" src="../images/nouvelle1.jpg" alt="nouvelle" />
+</div>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        const images = ['../images/nouvelle1.jpg', '../images/nouvelle2.jpeg'];
+        const headers = ['La Cité du Vin in Bordeaux', 'Bordeaux Cathedral'];
+        const paragraphs = [
+            'La Cité du Vin in Bordeaux is a unique cultural landmark dedicated to the world of wine. Opened in 2016, this impressive building reflects the shapes and movements of wine in a glass through its curved, flowing design. Created by architects Anouk Legendre and Nicolas Desmazières, the structure combines glass and metal to create a sense of fluidity. Inside, visitors experience interactive exhibits, workshops, and a panoramic tasting room that offers views over Bordeaux and the Garonne River. The architecture of La Cité du Vin symbolizes the blending of tradition and innovation in wine culture, making it a must-visit for wine enthusiasts and architecture lovers alike.',
+            "Bordeaux Cathedral, also known as Saint André Cathedral, is a stunning example of French Gothic architecture. Built between the 12th and 16th centuries, the cathedral features intricate stone carvings, soaring vaulted ceilings, and beautiful stained glass windows. The facade of the cathedral is particularly impressive, with its twin towers and ornate sculptures. Inside, visitors can admire the grand nave, the ornate organ, and the tomb of the famous philosopher Montaigne. Bordeaux Cathedral is a must-visit for anyone interested in history, art, or architecture."
+        ];
+
+        let index = 0;
+
+        setInterval(() => {
+            index = (index + 1) % images.length;
+
+            const imageElementCollection = document.getElementsByClassName('nouvelle_img');
+            imageElementCollection[0].src = images[index];
+
+            const headerElement = document.getElementById('nouvelle_h2');
+            headerElement.textContent = headers[index];
+
+            const paragraphElement = document.getElementById('nouvelle_p');
+            paragraphElement.textContent = paragraphs[index];
+        }, 5000);
+    });
+
+</script>
+</body>
+</html>
