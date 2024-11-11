@@ -4,7 +4,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #d5f1fe;
+    background-color: #1e1e2e;
     min-height: 100vh;
     margin: 0;
     padding: 0;
@@ -27,6 +27,7 @@ body {
     align-items: center;
     width: 45%;
     padding: 0 2.5%;
+    color: #e0e0e0;
 }
 
 #text-container h1 {
@@ -37,7 +38,6 @@ body {
 #text-container p {
     font-size: 1.2em; /* Increase tagline size */
     letter-spacing: 0.5px;
-    color: #e0e0e0; /* Adjust text color for readability */
 }
 
 #map-container {
@@ -62,13 +62,13 @@ body {
 
 /* Map region styles */
 .region {
-    fill: #2c5282;
+    fill: #3a86ff;
     stroke: #ffffff;
     stroke-width: 1.5px;
-    transition: fill 0.3s ease;
+    transition: fill 0.5s ease;
 }
 .region:hover {
-    fill: #f4d35e;
+    fill: #ffbe0b;
     cursor: pointer;
     stroke-width: 2px;
 }
