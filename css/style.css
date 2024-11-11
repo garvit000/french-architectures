@@ -1,100 +1,163 @@
-/* Basic body styles */
+/* Reset and base styles */
 body {
     font-family: Arial, sans-serif;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #d5f1fe;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Text container */
+#nouvelle_h1, #nouvelle_h2, #nouvelle_p, #image {
+    transition: all 1s ease;
+}
+
+#image {
+    width: 100%; 
+}
+
+/* Layout containers */
 #text-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 50%;
-    margin-left: 5%;
+    width: 45%;
+    padding: 0 2.5%;
 }
 
-/* Map container */
+#text-container h1 {
+    font-size: 2.5em; /* Increase title size */
+    margin-bottom: 10px;
+}
+
+#text-container p {
+    font-size: 1.2em; /* Increase tagline size */
+    letter-spacing: 0.5px;
+    color: #e0e0e0; /* Adjust text color for readability */
+}
+
 #map-container {
     position: relative;
-    width: 50%;
-    height: 80%;
+    width: 45%;
+    height: 80vh;
+    margin-right: 2.5%;
 }
 
-/* Region styles */
+/* Images*/
+#images {
+    max-width: 100%;
+    height: auto;
+    margin-right: 20px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    border-radius: 80px;
+    box-shadow: 0 0 2px 1px rgba(167, 95, 206, 0.5);
+    object-fit: contain;
+}
+
+/* Map region styles */
 .region {
-    fill: #F4D03F;
-    stroke: #666;
-    stroke-width: 1px;
-    transition: fill 0.3s;
+    fill: #2c5282;
+    stroke: #ffffff;
+    stroke-width: 1.5px;
+    transition: fill 0.3s ease;
 }
-
 .region:hover {
-    fill: yellow;
+    fill: #f4d35e;
     cursor: pointer;
+    stroke-width: 2px;
 }
 
-/* Tooltip styles */
 /* Tooltip styles */
 #tooltip {
     position: fixed;
-    background-color: rgba(0, 0, 0, 0.85);
+    background-color: rgba(0, 0, 0, 0.9);
     color: white;
-    padding: 15px;
-    border-radius: 8px;
+    padding: 12px 15px;
+    border-radius: 6px;
     pointer-events: none;
-    font-size: 14px;
-    white-space: nowrap;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    width: 565px; /* Adjust width as needed */
+    max-width: 565px;
+    width: auto;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 #tooltip strong {
     font-size: 16px;
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
+    color: #fff;
 }
 
 #tooltip span {
-    font-size: 12px;
-    color: #ccc;
+    font-size: 13px;
+    color: #e0e0e0;
+    line-height: 1.4;
 }
-
 
 .hidden {
-    display: none;
+    display: none !important;
 }
 
+/* Responsive design */
 @media (max-width: 768px) {
     body {
         flex-direction: column;
-        align-items: center;
-        padding: 10px;
-        text-align: center;
+        padding: 20px;
+    }
+
+    #text-container,
+    #map-container {
+        width: 95%;
+        margin: 10px auto;
     }
 
     #map-container {
-        width: 100%;
-    }
-
-    svg {
-        width: 100%;
-        height: auto;
+        height: 60vh;
     }
 
     #tooltip {
-        font-size: 12px;
+        max-width: 90%;
+        font-size: 14px;
     }
 }
 
 @media (max-width: 480px) {
     #tooltip {
-        font-size: 10px;
-        padding: 3px;
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    #tooltip strong {
+        font-size: 14px;
+    }
+
+    #tooltip span {
+        font-size: 11px;
+    }
+}
+@media (max-width: 768px) {
+    #map-container {
+        width: 90%;
+        margin: auto;
+    }
+
+    #night-mode-toggle {
+        top: 10px;
+        right: 10px;
+        padding: 8px;
+    }
+
+    #text-container h1 {
+        font-size: 1.8em;
+    }
+
+    #text-container p {
+        font-size: 1em;
     }
 }
