@@ -50,7 +50,7 @@ function handleClick(regionName) {
         "Grand Est": "./states/grand-est.html",
         "Provence Alpes Côte d'Azu": "./states/provence-alpes-cote-d-azur.html",
         "Auvergne Rhône Alpes": "./states/auvergne-rhone-alpes.html",
-        "Bourgogne Franche Comté": "./states/bourgogne-franche-comte.html",
+        "Burgundy": "./states/burgundy.html",
         "Occitanie": "./states/occitanie.html",
         "Pays de la Loire": "./states/pays-de-la-loire.html",
         "Bretagne": "./states/bretagne.html",
@@ -58,11 +58,11 @@ function handleClick(regionName) {
         "Corse": "./states/corse.html",
         "Nouvelle Aquitaine": "./states/nouvelle-aquitaine.html",
         "Centre Val de Loire": "./states/centre-val-de-loire.html",
-        "Île-de-France": "./states/ile-de-france.html"
+        "Île de France": "./states/ile-de-france.html"
     };
 
     // Redirect to the page
-    const url = urlMap[regionName] || "default.html";
+    const url = urlMap[regionName] || "index.html";
     window.location.href = url;
 }
 
