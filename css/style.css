@@ -101,14 +101,14 @@ body {
 }
 
 /* Navigation Bar */
-nav {
+nav { 
     background-color: #252634;
     padding: 10px 30px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 98%;
+    width: 97%;
     position: fixed;
     top: 0;
     z-index: 1000;
@@ -145,6 +145,75 @@ nav ul li a {
 nav ul li a:hover {
     color: #1e1e2e;
     background-color: #ffb703;
+}
+
+/* Dropdown styles */
+nav .dropdown {
+    position: relative;
+}
+
+nav .dropdown button {
+    background-color: #252634;
+    color: #dfe6e9;
+    font-weight: bold;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: color 0.5s ease, background-color 0.7s ease, transform 0.3s ease;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+}
+
+nav .dropdown button:hover {
+    color: #1e1e2e;
+    background-color: #ffb703;
+    transform: scale(1.05);
+}
+
+nav .dropdown button i {
+    margin-left: 5px; 
+}
+
+/* Dropdown content */
+nav .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    background-color: #252634;
+    z-index: 1;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateY(10px); 
+}
+
+/* Dropdown items */
+nav .dropdown-content button {
+    color: #dfe6e9;
+    font-weight: bold;
+    border: none;
+    padding: 12px 20px;
+    width: 100%;
+    text-align: left;
+    background-color: #252634;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: color 0.5s ease, background-color 0.7s ease;
+    font-size: 16px;
+}
+
+nav .dropdown-content button:hover {
+    color: #1e1e2e;
+    background-color: #ffb703;
+}
+
+nav .dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Responsive Design */

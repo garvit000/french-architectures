@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nouvelle Aquitaine - L'architecture française</title>
+    <link rel="icon" href="../../images/Flag-France.webp" type="image/x-icon">
+    <link rel="stylesheet" href="../../css/style.css" />
+</head>
+<body>
+    <nav>
+        <div class="logo">L'architecture française</div>
+        <ul>
+         <li><a href="../index.html">Maison</a></li>
+         <li><a href="https://github.com/garvit000" target = "_blank">Contact</a></li>
+          <li><a href="https://github.com/garvit000/french-architectures" target="_blank">Open Source</a></li>
+        </ul>
+      </nav>
+       <div id="text-container">
+        <h1 id="nouvelle_h1">Nouvelle Aquitaine</h1>
+            <h2 id="nouvelle_h2">La Cité du Vin in Bordeaux</h2>
+            <p id="nouvelle_p">La Cité du Vin de Bordeaux est un monument culturel unique dédié au monde du vin. Ouvert en 2016, cet impressionnant bâtiment reflète les formes et les mouvements du vin dans un verre à travers son design incurvé et fluide. Créée par les architectes Anouk Legendre et Nicolas Desmazières, la structure allie verre et métal pour créer une sensation de fluidité. À l'intérieur, les visiteurs découvrent des expositions interactives, des ateliers et une salle de dégustation panoramique offrant une vue sur Bordeaux et la Garonne. L'architecture de la Cité du Vin symbolise le mélange de tradition et d'innovation dans la culture du vin, ce qui en fait une visite incontournable pour les amateurs de vin et d'architecture.</p>
+        <footer>
+            <p>&copy; 2024 L'architecture française</p>
+        </footer>
+</div>
+<div class="image-container">
+    <img id="images" class="nouvelle_img" src="../../images/nouvelle1.jpg" alt="nouvelle" />
+</div>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        const images = ['../../images/nouvelle1.jpg', '../../images/nouvelle2.jpeg'];
+        const headers = ['La Cité du Vin in Bordeaux', 'Bordeaux Cathedral'];
+        const paragraphs = [
+            "La Cité du Vin de Bordeaux est un monument culturel unique dédié au monde du vin. Ouvert en 2016, cet impressionnant bâtiment reflète les formes et les mouvements du vin dans un verre à travers son design incurvé et fluide. Créée par les architectes Anouk Legendre et Nicolas Desmazières, la structure allie verre et métal pour créer une sensation de fluidité. À l'intérieur, les visiteurs découvrent des expositions interactives, des ateliers et une salle de dégustation panoramique offrant une vue sur Bordeaux et la Garonne. L'architecture de la Cité du Vin symbolise le mélange de tradition et d'innovation dans la culture du vin, ce qui en fait une visite incontournable pour les amateurs de vin et d'architecture.",
+            "La cathédrale de Bordeaux, également connue sous le nom de cathédrale Saint-André, est un exemple remarquable de l'architecture gothique française. Construite entre le XIIe et le XVIe siècle, la cathédrale présente des sculptures en pierre complexes, de hauts plafonds voûtés et de magnifiques vitraux. La façade de la cathédrale est particulièrement impressionnante, avec ses tours jumelles et ses sculptures ornées. À l'intérieur, les visiteurs peuvent admirer la grande nef, l'orgue orné et le tombeau du célèbre philosophe Montaigne. La cathédrale de Bordeaux est une visite incontournable pour tous ceux qui s'intéressent à l'histoire, à l'art ou à l'architecture."
+        ];
+
+        let index = 0;
+
+        setInterval(() => {
+            index = (index + 1) % images.length;
+
+            const imageElementCollection = document.getElementsByClassName('nouvelle_img');
+            imageElementCollection[0].src = images[index];
+
+            const headerElement = document.getElementById('nouvelle_h2');
+            headerElement.textContent = headers[index];
+
+            const paragraphElement = document.getElementById('nouvelle_p');
+            paragraphElement.textContent = paragraphs[index];
+        }, 5000);
+    });
+
+</script>
+</body>
+</html>

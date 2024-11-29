@@ -7,7 +7,7 @@ function showTooltip(event, regionName, description) {
     tooltip.innerHTML = `
         <strong>${regionName}</strong>
         <br>${description}
-        <br><span class="click-hint">Click for more details</span>
+        <br><span class="click-hint">Cliquez pour plus de détails</span>
     `;
     tooltip.classList.remove('hidden');
 
