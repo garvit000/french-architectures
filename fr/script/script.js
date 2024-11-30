@@ -93,5 +93,5 @@ regions.forEach(region => {
 });
 
 function changeLanguage(language) {
-    window.location.href = window.location.origin + '/' + language;
+    window.location.href = window.location.origin + '/' + language + '/index.html';
 }
