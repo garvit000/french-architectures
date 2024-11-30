@@ -152,7 +152,7 @@ nav .dropdown {
     position: relative;
 }
 
-nav .dropdown button {
+nav .dropdown a{
     background-color: #252634;
     color: #dfe6e9;
     font-weight: bold;
@@ -165,7 +165,7 @@ nav .dropdown button {
     align-items: center;
 }
 
-nav .dropdown button:hover {
+nav .dropdown a:hover {
     color: #1e1e2e;
     background-color: #ffb703;
     transform: scale(1.05);

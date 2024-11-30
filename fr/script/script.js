@@ -93,5 +93,10 @@ regions.forEach(region => {
 });
 
 function changeLanguage(language) {
-    window.location.href = '/' + language + '/index.html';
+    if(language === 'fr') {
+    window.location.href = 'https://garvit000.github.io/french-architectures/fr/index.html';
+}
+else if(language === 'en') {
+    window.location.href = 'https://garvit000.github.io/french-architectures/index.html';
+}
 }
