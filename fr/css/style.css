@@ -187,7 +187,8 @@ nav .dropdown-content {
     border-radius: 8px;
     opacity: 0;
     transition: opacity 0.3s ease, transform 0.3s ease;
-    transform: translateY(10px); 
+    transform: translateY(10px);
+    padding: 8px 5px; /* Added padding for spacing */
 }
 
 /* Dropdown items */
@@ -203,6 +204,7 @@ nav .dropdown-content button {
     cursor: pointer;
     transition: color 0.5s ease, background-color 0.7s ease;
     font-size: 16px;
+    margin: 4px 4px; /* Added margin for spacing between items */
 }
 
 nav .dropdown-content button:hover {
