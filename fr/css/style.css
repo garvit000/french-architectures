@@ -130,7 +130,7 @@ nav ul {
 }
 
 nav ul li {
-    display: inline;
+    position: relative;
 }
 
 nav ul li a {
@@ -140,6 +140,7 @@ nav ul li a {
     padding: 8px 12px;
     transition: color 0.5s ease, background-color 0.7s ease;
     border-radius: 15px;
+    display: inline-block;
 }
 
 nav ul li a:hover {
@@ -148,15 +149,10 @@ nav ul li a:hover {
 }
 
 /* Dropdown styles */
-nav .dropdown {
-    position: relative;
-}
-
-nav .dropdown a{
+nav .dropdown > a {
     background-color: #252634;
     color: #dfe6e9;
     font-weight: bold;
-    border: none;
     padding: 10px 15px;
     cursor: pointer;
     transition: color 0.5s ease, background-color 0.7s ease, transform 0.3s ease;
@@ -165,56 +161,48 @@ nav .dropdown a{
     align-items: center;
 }
 
-nav .dropdown a:hover {
+nav .dropdown > a:hover {
     color: #1e1e2e;
     background-color: #ffb703;
     transform: scale(1.05);
 }
 
-nav .dropdown button i {
-    margin-left: 5px; 
-}
-
 /* Dropdown content */
 nav .dropdown-content {
-    display: none;
     position: absolute;
-    top: 100%; 
+    top: 100%;
     left: 0;
     background-color: #252634;
     z-index: 1;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
+    cursor: pointer;
+    min-width: 180px;
     opacity: 0;
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
     transform: translateY(10px);
-    padding: 8px 5px; /* Added padding for spacing */
 }
 
-/* Dropdown items */
-nav .dropdown-content button {
+nav .dropdown-content a {
     color: #dfe6e9;
     font-weight: bold;
-    border: none;
-    padding: 12px 20px;
-    width: 100%;
-    text-align: left;
+    padding: 10px 15px;
+    display: block;
+    text-decoration: none;
     background-color: #252634;
     border-radius: 8px;
-    cursor: pointer;
     transition: color 0.5s ease, background-color 0.7s ease;
-    font-size: 16px;
-    margin: 4px 4px; /* Added margin for spacing between items */
 }
 
-nav .dropdown-content button:hover {
+nav .dropdown-content a:hover {
     color: #1e1e2e;
     background-color: #ffb703;
 }
 
 nav .dropdown:hover .dropdown-content {
-    display: block;
     opacity: 1;
+    visibility: visible;
     transform: translateY(0);
 }
 
