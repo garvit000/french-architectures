@@ -91,12 +91,3 @@ regions.forEach(region => {
         handleClick(regionName);
     });
 });
-
-function changeLanguage(language) {
-    if(language === 'fr') {
-    window.location.href = 'https://garvit000.github.io/french-architectures/fr/index.html';
-}
-else if(language === 'en') {
-    window.location.href = 'https://garvit000.github.io/french-architectures/index.html';
-}
-}
