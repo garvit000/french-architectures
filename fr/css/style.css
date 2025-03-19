@@ -206,6 +206,23 @@ nav .dropdown:hover .dropdown-content {
     transform: translateY(0);
 }
 
+.map-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 15px;
+    background-color: #ffbe0b;
+    color: #1e1e2e;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.map-button:hover {
+    background-color: #ff9f00;
+    transform: scale(1.05);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     body {
